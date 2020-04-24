@@ -317,12 +317,18 @@ public class UnixUserStoreManager extends AbstractUserStoreManager {
 
     @Override
     protected void doSetUserClaimValue(String userName, String claimURI, String claimValue, String profileName) throws UserStoreException {
-
+        String methodName = new Throwable().getStackTrace()[0].getMethodName();
+        if (log.isDebugEnabled()) {
+            log.debug("UnixUserStoreManager: " + methodName);
+        }
     }
 
     @Override
     protected void doSetUserClaimValues(String userName, Map<String, String> claims, String profileName) throws UserStoreException {
-
+        String methodName = new Throwable().getStackTrace()[0].getMethodName();
+        if (log.isDebugEnabled()) {
+            log.debug("UnixUserStoreManager: " + methodName);
+        }
     }
 
     @Override
@@ -493,6 +499,11 @@ public class UnixUserStoreManager extends AbstractUserStoreManager {
 
     @Override
     protected String getClaimAtrribute(String claimURI, String identifier, String domainName) throws org.wso2.carbon.user.api.UserStoreException {
+        String methodName = new Throwable().getStackTrace()[0].getMethodName();
+        if (log.isDebugEnabled()) {
+            log.debug("UnixUserStoreManager: " + methodName);
+        }
+
         if (claimURI.equalsIgnoreCase("http://wso2.org/claims/userid") || claimURI.equalsIgnoreCase("http://wso2.org/claims/username")){
             return "scimId";
         }
@@ -501,11 +512,19 @@ public class UnixUserStoreManager extends AbstractUserStoreManager {
 
     @Override
     protected List<String> getMappingAttributeList(List<String> claimList) throws UserStoreException {
+        String methodName = new Throwable().getStackTrace()[0].getMethodName();
+        if (log.isDebugEnabled()) {
+            log.debug("UnixUserStoreManager: " + methodName);
+        }
         return null;
     }
 
     @Override
     public UserClaimSearchEntry[] getUsersClaimValues(String[] userNames, String[] claims, String profileName) throws UserStoreException {
+        String methodName = new Throwable().getStackTrace()[0].getMethodName();
+        if (log.isDebugEnabled()) {
+            log.debug("UnixUserStoreManager: " + methodName);
+        }
         return null;
     }
 
@@ -561,11 +580,19 @@ public class UnixUserStoreManager extends AbstractUserStoreManager {
 
     @Override
     protected String[] doGetInternalRoleListOfUser(String userName, String filter) throws UserStoreException {
+        String methodName = new Throwable().getStackTrace()[0].getMethodName();
+        if (log.isDebugEnabled()) {
+            log.debug("UnixUserStoreManager: " + methodName);
+        }
         return null;
     }
 
     @Override
     public String[] getRoleListOfUser(String userName) throws UserStoreException {
+        String methodName = new Throwable().getStackTrace()[0].getMethodName();
+        if (log.isDebugEnabled()) {
+            log.debug("UnixUserStoreManager: " + methodName);
+        }
         String[] roles = new String[0];
         return roles;
     }
